@@ -1,19 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// 引入子路由
+import buyRoute from './buy'
+import keepRoute from './keep'
+import discoveryRoute from './discovery'
+
+const baseRoute = [{path:'/',redirect:'/BuyIndex'}]
 
 Vue.use(Router)
 
-/* 路由懒加载*/
-const Index = r => require.ensure([], () => r(require('../pages/index')), 'index');
-const Register = r => require.ensure([], () => r(require('../pages/register')), 'index');
-
 /* 路由配置*/
 var router = new Router({
-  routes: [
-    {path: '/', redirect: '/Index'},
-    {path: '/Index', component: Index, meta: {title: '首页'}},
-    {path: '/Register', component: Register, meta: {title: '注册'}},
-  ]
+  routes: baseRoute.concat(buyRoute, keepRoute, discoveryRoute)
 })
 
 router.beforeResolve((to, from, next) => {  //全局解析守卫
