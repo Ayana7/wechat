@@ -1,0 +1,251 @@
+/*
+ * @func: 公共样式
+ */
+@import "./variable"
+@import './mixin';
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption, {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		font-style: normal;
+		text-decoration: none;
+		border: none;
+		// color: #333;
+		font-weight: normal;
+		font-family: "Microsoft Yahei";
+		box-sizing: border-box;
+		-webkit-tap-highlight-color:transparent;
+		-webkit-font-smoothing: antialiased;
+		&:hover{
+				outline: none;
+		}
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+		width: 0px;
+		height: 0px;
+		background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+		-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+		border-radius: 10px;
+		background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+		background-color: #555;
+}
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+		-webkit-appearance: none;
+}
+
+textarea { -webkit-appearance: none;}
+
+html,body{
+		height: 100%;
+		width: 100%;
+		background-color: $color-background;
+}
+/* 兼容pc端浏览器火狐显示html多出滚动条的bug */
+@-moz-document url-prefix(){
+	html,body{
+		overflow-y hidden
+	}
+}
+
+
+.clearfix {
+	overflow: auto;
+	zoom: 1;
+}
+.left
+	float: left
+.right
+	float: right
+.child-view
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: $color-background;
+	z-index: 1024
+	overflow-y: auto;
+
+	/* 底部悬浮按钮*/
+.fixed-bottom
+	width 90%
+	position fixed
+	left 5%
+	bottom 0.2rem
+	z-index: 1000
+
+/* 提交按钮 */
+.fix-btn
+	width 96%
+	margin 0 2%
+	display flex
+	justify-content space-around
+	position fixed
+	bottom 0
+	padding 10px 0
+	button
+		width: 96%
+		margin: 0 2%
+
+.submit-btn
+	height 40px
+	line-height 40px
+	width 90%
+	margin 0 auto
+	box-shadow:0px 4px 4px rgba(132, 132, 132, .4)
+
+/*边框border*/
+.border-t
+	b-1()
+	bt-1($color-border)
+.border-l
+	b-1()
+	bl-1($color-border)
+.border-r
+	b-1()
+	br-1($color-border)
+.border-b
+	b-1()
+	bb-1($color-border)
+
+.margin-t
+	margin-top: 10px
+/*文字相关*/
+
+.color-blue
+	color $color-theme
+
+.color-yellow
+	color $color-sub-theme
+.color-red
+	color #f91540
+
+.text-overflow
+	display block
+	text-overflow ellipsis
+	overflow hidden
+	white-space nowrap
+
+/*:active按压效果*/
+.tap-active
+	&:active
+		background-color: $color-background-d
+
+/*卡片阴影效果*/
+.card
+	color :$color-text
+	border-radius:2px
+	background-color:$color-highlight-background
+	box-shadow:0 2px 4px rgba(132, 132, 132, .1)
+
+/*flex-panel*/
+	.flex-box
+		display: flex
+		display: -webkit-flex
+		justify-content: space-around
+		-webkit-justify-content: space-around
+		align-items center
+		-webkit-align-items center
+		background-color: $color-highlight-background
+
+		.flex-item
+			text-align: center
+
+/*vue动画*/
+
+	/*slide-left*/
+	.slide-left-enter-active, .slide-left-leave-active
+		transition: all .3s ease-in-out
+
+	.slide-left-enter, .slide-left-leave-to
+		transform: translate3d(100%, 0, 0)
+		opacity: 1
+
+	/*slide-right*/
+	.slide-right-enter-active, .slide-right-leave-active
+		transition: all .3s ease-in-out
+
+	.slide-right-enter, .slide-right-leave-to
+		transform: translate3d(-100%, 0, 0)
+		opacity: 1
+
+/*公共面板*/
+.store-info
+	padding 10px 10px 10px 14px
+	margin-top 10px
+	.store-info__name
+		width 70%
+		text-align left
+		.text-main
+			font-size: 14px
+			font-weight: bold
+			color $color-text
+		.text-sub
+			font-size: 12px
+			color $color-sub-text
+	.store-info__sa
+		width 30%
+		color $color-theme
+.news
+	display flex
+	align-items center
+	background $color-highlight-background
+	.news__hd
+		text-align: center
+		width 20%
+		img
+			width 1.0rem
+	.news__bd
+		width 80%
+		text-align left
+		font-size 13px
+		color $color-text
+		padding-left 10px
+		.news__text
+			width 100%
+			padding-right 10px
+
+.car-info
+	width: 100%
+	background: $color-highlight-background
+	display: flex
+	margin-top 10px
+	.car-info__hd
+		padding 10px
+		img
+			height 50px
+	.car-info__bd
+		width 70%
+		flex 1
+		display flex
+		justify-content center
+		flex-direction column
+		.car-info__name
+			font-weight bold
+			font-size 16px
+			line-height 24px
+		.car-info__plate
+			color $color-sub-text
+	.car-info__ft
+		width 10%
+		display flex
+		justify-content center
+		align-items center
+		i
+			color $color-sub-text

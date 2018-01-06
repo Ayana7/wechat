@@ -1,0 +1,61 @@
+/*
+ * @func: 主题配色
+ */
+@import "./variable"
+//按钮
+.yd-btn-primary
+    background-color: $color-theme
+    color: #fff
+.yd-btn-primary:active
+    background-color: $color-theme
+    color: #ccc
+
+//对话框
+.yd-confirm
+    margin-top: -20%
+
+//表单样式
+.yd-cell-title:after
+  border-bottom: 1px solid rgba(0, 0, 0, .1)
+
+.yd-cell:after
+  border-bottom: 1px solid rgba(0, 0, 0, .1)
+
+.yd-cell-box:before
+  border-top: 1px solid rgba(0, 0, 0, .1)
+
+.yd-cell-item:not(:last-child):after
+  border-bottom: 1px solid rgba(0, 0, 0, .1)
+
+// 日期选择
+.yd-datetime-head>a:last-child
+  color: $color-theme!important
+
+
+// 城市选择
+.yd-cityselect-nav-active {
+  color: $color-theme
+}
+
+.yd-cityselect-nav-active:after {
+  background-color: $color-theme
+}
+
+.yd-cityselect-item-active {
+  color: $color-theme
+}
+
+// 搜索框文字颜色
+.yd-search-input>.cancel-text {
+  color: $color-theme;
+}
+
+// confirm提示框 确认按钮文字颜色
+.yd-confirm-ft > a.primary {
+  color: $color-theme;
+}
+
+  // select
+.yd-cell-right select {
+  color: #333;
+}

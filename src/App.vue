@@ -43,7 +43,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -60,7 +60,7 @@
     transition: opacity .2s
   }
 
-  .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */
+  .fade-enter, .fade-leave-active /* .fade-leave-active in below version 2.1.8 */
   {
     opacity: 0
   }
